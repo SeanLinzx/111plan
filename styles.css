@@ -32,6 +32,7 @@ button {
   width: min(100vw, 1440px);
   margin: 0 auto;
   background: #fff;
+  --page-scale: 1;
 }
 
 .page-image {
@@ -42,9 +43,34 @@ button {
   -webkit-user-drag: none;
 }
 
+.text-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.selectable-text {
+  position: absolute;
+  overflow: hidden;
+  color: transparent;
+  cursor: text;
+  font-family: Inter, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0;
+  user-select: text;
+  white-space: pre-wrap;
+  overflow-wrap: normal;
+  -webkit-text-fill-color: transparent;
+}
+
+.selectable-text::selection {
+  color: transparent;
+  background: rgba(0, 102, 255, 0.28);
+  -webkit-text-fill-color: transparent;
+}
+
 .hotspot {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   display: block;
   cursor: pointer;
   border-radius: 2px;
