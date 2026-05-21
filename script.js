@@ -2,8 +2,8 @@ const DESIGN = {
   width: 1440,
   height: 3728,
   images: {
-    zh: "./111%20CH.svg",
-    en: "./111%20EN.svg",
+    zh: "./111%20CH-2.svg",
+    en: "./111%20EN-2.svg",
   },
   alt: {
     zh: "人智协同设计 学科创新引领基地",
