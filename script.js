@@ -2,8 +2,8 @@ const DESIGN = {
   width: 1440,
   height: 3728,
   images: {
-    zh: "./111%20CH-2.svg",
-    en: "./111%20EN-2.svg",
+    zh: "./111%20CH.svg",
+    en: "./111%20EN.svg",
   },
   alt: {
     zh: "人智协同设计 学科创新引智基地",
@@ -108,7 +108,7 @@ const page = document.getElementById("figmaPage");
 const image = document.getElementById("pageImage");
 const textLayer = document.getElementById("textLayer");
 const hotspots = [...document.querySelectorAll(".hotspot")];
-let currentLanguage = localStorage.getItem("preferred-language") || "zh";
+let currentLanguage = "en";
 
 function designToPercent(rect) {
   return {
