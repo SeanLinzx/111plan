@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Human-AI Collaborative Design 111 Center</title>
     <link rel="preload" as="image" href="./111%20EN.svg" />
+    <link rel="preload" as="image" href="./assets/prof-ji-tie.png" />
+    <link rel="preload" as="image" href="./assets/prof-nick-bryan-kinns.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -20,6 +22,23 @@
         />
 
         <div class="text-layer" id="textLayer" aria-label="Selectable page text"></div>
+
+        <div class="avatar-layer" aria-hidden="true">
+          <img
+            class="avatar-replacement avatar-replacement--ji"
+            src="./assets/prof-ji-tie.png"
+            alt=""
+            width="388"
+            height="388"
+          />
+          <img
+            class="avatar-replacement avatar-replacement--nick"
+            src="./assets/prof-nick-bryan-kinns.png"
+            alt=""
+            width="384"
+            height="384"
+          />
+        </div>
 
         <button class="hotspot" type="button" data-action="scroll" data-target="home" aria-label="Home"></button>
         <button class="hotspot" type="button" data-action="scroll" data-target="intro" aria-label="Introduction"></button>
