@@ -2,11 +2,9 @@ const DESIGN = {
   width: 1440,
   height: 3728,
   images: {
-    zh: "./111%20CH.svg",
     en: "./111%20EN.svg",
   },
   alt: {
-    zh: "人智协同设计 学科创新引智基地",
     en: "Human-AI Collaborative Design Center for International Cooperation and Disciplinary Innovation supported by the 111 Center",
   },
   hotspots: {
@@ -108,7 +106,7 @@ const page = document.getElementById("figmaPage");
 const image = document.getElementById("pageImage");
 const textLayer = document.getElementById("textLayer");
 const hotspots = [...document.querySelectorAll(".hotspot")];
-let currentLanguage = "en";
+const currentLanguage = "en";
 
 function designToPercent(rect) {
   return {
@@ -163,15 +161,14 @@ function scrollToTarget(target) {
 }
 
 function setLanguage(language) {
+  language = "en";
   const previousScale = scaleFactor();
   const pageTop = page.getBoundingClientRect().top + window.scrollY;
   const designScrollY = Math.max(0, (window.scrollY - pageTop) / previousScale);
 
-  currentLanguage = language;
-  localStorage.setItem("preferred-language", language);
-  document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
-  image.src = DESIGN.images[language];
-  image.alt = DESIGN.alt[language];
+  document.documentElement.lang = "en";
+  image.src = DESIGN.images.en;
+  image.alt = DESIGN.alt.en;
   applyHotspots();
   renderTextLayer();
 
@@ -184,11 +181,6 @@ function setLanguage(language) {
 
 hotspots.forEach((hotspot) => {
   hotspot.addEventListener("click", () => {
-    if (hotspot.dataset.action === "lang") {
-      setLanguage(hotspot.dataset.lang);
-      return;
-    }
-
     scrollToTarget(hotspot.dataset.target);
   });
 });
